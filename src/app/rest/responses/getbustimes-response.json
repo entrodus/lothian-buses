@@ -1,0 +1,92 @@
+{
+    "busTimes": [
+        {
+            "operatorId": "LB",
+            "stopId": "36237356",
+            "stopName": "Pilrig Gardens",
+            "refService": "19",
+            "mnemoService": "11",
+            "nameService": "Hyvots Bank -- Ocean Terminal",
+            "timeDatas": [
+                {
+                    "refDest": "1277953",
+                    "nameDest": "Hyvots Bank",
+                    "day": 0,
+                    "time": "20:32",
+                    "minutes": 4,
+                    "equipment": "",
+                    "vehicleStatus": "",
+                    "reliability": "H",
+                    "event": "",
+                    "type": "N",
+                    "terminus": "36235272",
+                    "journeyId": "5407",
+                    "busId": "801"
+                },
+                {
+                    "refDest": "1277953",
+                    "nameDest": "Hyvots Bank",
+                    "day": 0,
+                    "time": "20:47",
+                    "minutes": 19,
+                    "equipment": "",
+                    "vehicleStatus": "",
+                    "reliability": "H",
+                    "event": "",
+                    "type": "N",
+                    "terminus": "36235272",
+                    "journeyId": "6372",
+                    "busId": "716"
+                }
+            ],
+            "globalDisruption": false,
+            "serviceDisruption": false,
+            "busStopDisruption": false,
+            "serviceDiversion": false
+        },
+        {
+            "operatorId": "LB",
+            "stopId": "36237356",
+            "stopName": "Pilrig Gardens",
+            "refService": "155",
+            "mnemoService": "N11",
+            "nameService": "Ocean Terminal - Hyvots Bank",
+            "timeDatas": [
+                {
+                    "refDest": "10190848",
+                    "nameDest": "Hyvots Bank",
+                    "day": 0,
+                    "time": "00:52",
+                    "minutes": 263,
+                    "equipment": "",
+                    "vehicleStatus": "",
+                    "reliability": "T",
+                    "event": "",
+                    "type": "N",
+                    "terminus": "36235272",
+                    "journeyId": "1338",
+                    "busId": "0"
+                },
+                {
+                    "refDest": "10190848",
+                    "nameDest": "Hyvots Bank",
+                    "day": 0,
+                    "time": "01:52",
+                    "minutes": 323,
+                    "equipment": "",
+                    "vehicleStatus": "",
+                    "reliability": "T",
+                    "event": "",
+                    "type": "N",
+                    "terminus": "36235272",
+                    "journeyId": "1333",
+                    "busId": "0"
+                }
+            ],
+            "globalDisruption": false,
+            "serviceDisruption": false,
+            "busStopDisruption": false,
+            "serviceDiversion": false
+        }
+    ]
+}

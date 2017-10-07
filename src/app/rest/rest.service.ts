@@ -17,21 +17,32 @@ export class RestService {
   constructor(private http: HttpClient, private settings: SettingsContext) { }
 
   public getBusTimesforStopId(stopId: string): Observable<BusTimesResponse> {
-    const request = new BusTimesRequest();
-    request.key = this.calculateApplicationKey();
-    request.timeRequests.push(TimeRequest.fromStopId(stopId));
 
-    return this.getBusTimes(request);
+    const params = new Map<string, string>([
+      ['key', this.calculateApplicationKey()],
+      ['function', 'getBusTimes'],
+      ['stopId1', stopId],
+    ]);
+
+    const url = this.getBaseUrlWithParams(params);
+    console.log(url);
+
+    // VI.2.9.1 EXAMPLE OF REQUEST
+    // http://ws.mybustracker.co.uk/?module=json&key=b2bc78d58f40a6239ccfac773494ac2b&f
+    // unction=getBusTimes&stopId1=36232323&stopId2=36235979
+    return Observable.of(null);
+    // return this.http.get(url).map(r => r as BusTimesResponse);
   }
 
-  public getBusTimes(request: BusTimesRequest): Observable<BusTimesResponse> {
-    const url = `${this.baseUrl}&function=getBusTimes`;
-    return this.http.get(url).map(r => r as BusTimesResponse);
+  private getBaseUrlWithParams(params: Map<string, string>): string {
+    let url = this.baseUrl;
+    params.forEach((v, k) => url = url + `&${k}=${v}`);
+    return url;
   }
 
   private calculateApplicationKey(): string {
     const timeStamp = this.getFormatedDateTime();
-    const key = timeStamp + this.settings.API_KEY;
+    const key = this.settings.API_KEY + timeStamp;
     const hashed = Md5.hashStr(key) as string;
     return hashed;
   }
@@ -39,7 +50,12 @@ export class RestService {
   // The timestamp string is YYYYMMDDHH, where:
   private getFormatedDateTime(): string {
     const date = new Date();
-    const ret = `${date.getFullYear()}${date.getMonth}${date.getDay()}${date.getHours()}`;
+    // const ret = `${date.getFullYear()}${date.getMonth()}${date.getDay()}${date.getHours()}`;
+
+    const ret = date.getFullYear().toString()
+      + ('0' + (date.getMonth() + 1).toString()).slice(-2)
+      + ('0' + (date.getDay() + 1).toString()).slice(-2)
+      + ('0' + date.getHours().toString()).slice(-2);
     return ret;
   }
 }
