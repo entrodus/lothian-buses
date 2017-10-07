@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from './rest/rest.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,11 @@ export class AppComponent implements OnInit {
 
   title = 'app';
 
+  constructor(private restService: RestService) { }
 
   ngOnInit(): void {
-
-    console.log('yo mate');
+    this.restService.getBusTimesforStopId('36237356')
+      .subscribe( (response) => console.log(response));
   }
 }
 

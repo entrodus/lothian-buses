@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SettingsContext } from './settings.context';
+import { RestService } from './rest/rest.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SettingsContext } from './settings.context';
   ],
   providers: [
     SettingsContext,
+    RestService,
   ],
   bootstrap: [AppComponent]
 })
