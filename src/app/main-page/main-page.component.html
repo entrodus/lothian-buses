@@ -1,0 +1,11 @@
+<h1>Main page</h1>
+
+<form name="busStopTimesForm" class="form-inline">
+  <div class="form-group">
+    <label for="busStopId">Enter bus stop id</label>
+    <input type="text" class="form-control" id="busStopId" name="busStopName" placeholder="Bus stop id" [(ngModel)]="busStopId">
+  </div>
+  
+    <button type="button" class="btn btn-default" (click)="navigateToBusStopTimes()">Open bus stop times</button>
+
+</form>
