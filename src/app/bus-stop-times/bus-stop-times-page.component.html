@@ -1,0 +1,3 @@
+<ng-container *ngIf="busTimesResponse$ | async">
+  <app-bus-stop-times [busTimesResponse]="busTimesResponse$ | async"></app-bus-stop-times>
+</ng-container>

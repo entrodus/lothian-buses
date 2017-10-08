@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    margin: 5px;
+}
+
+.bus-id {
+    background-color: #777;
+    color: white;
+    padding: 3px 5px; 
+}
+
+.bus-line {
+    padding: 3px 0;
+}
+
+.time-data-line {
+    background-color: lightgrey;
+    border: 1px;
+    border-style: ridge;
+    border-color: gray;
+    margin-right: 5px;
+    padding: 3px;
+}

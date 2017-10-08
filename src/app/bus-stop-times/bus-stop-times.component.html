@@ -1,0 +1,13 @@
+<h1>{{stopName}}</h1>
+
+<div class="bus-time" *ngFor="let busTimes of busTimesResponse.busTimes">
+  <p class="bus-line">
+    <span class="bus-id">{{busTimes.mnemoService}}</span>
+    <span>{{busTimes.nameService}}</span>
+  </p>
+  <p>
+    <span class="time-data-line" *ngFor="let timeData of busTimes.timeDatas">
+      {{timeData.minutes}} minutes
+    </span>
+  </p>
+</div>

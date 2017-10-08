@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { SettingsContext } from './settings.context';
 import { RestService } from './rest/rest.service';
 import { RestServiceMock } from './rest/rest.service.mock';
+import { BusStopTimesComponent } from './bus-stop-times/bus-stop-times.component';
+import { BusStopTimesPageComponent } from './bus-stop-times/bus-stop-times-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BusStopTimesComponent,
+    BusStopTimesPageComponent,
   ],
   imports: [
     BrowserModule,
