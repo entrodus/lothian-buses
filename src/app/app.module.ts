@@ -32,8 +32,8 @@ const routes: Routes = [
   ],
   providers: [
     SettingsContext,
-    { provide: RestService, useClass: RestServiceMock },
-    // RestService,
+    // { provide: RestService, useClass: RestServiceMock },
+    RestService,
   ],
   bootstrap: [AppComponent]
 })
