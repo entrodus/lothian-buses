@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SettingsContext } from './settings.context';
 import { RestService } from './rest/rest.service';
+import { RestServiceMock } from './rest/rest.service.mock';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RestService } from './rest/rest.service';
   ],
   providers: [
     SettingsContext,
-    RestService,
+    { provide: RestService, useClass: RestServiceMock },
+    // RestService,
   ],
   bootstrap: [AppComponent]
 })

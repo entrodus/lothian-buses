@@ -25,13 +25,16 @@ export class RestService {
     ]);
 
     const url = this.getBaseUrlWithParams(params);
-    console.log(url);
 
     // VI.2.9.1 EXAMPLE OF REQUEST
     // http://ws.mybustracker.co.uk/?module=json&key=b2bc78d58f40a6239ccfac773494ac2b&f
     // unction=getBusTimes&stopId1=36232323&stopId2=36235979
-    return Observable.of(null);
-    // return this.http.get(url).map(r => r as BusTimesResponse);
+
+    return this.http.get(url).map(response => {
+      const busTimesResponse = new BusTimesResponse();
+      Object.assign(busTimesResponse, response);
+      return busTimesResponse;
+    });
   }
 
   private getBaseUrlWithParams(params: Map<string, string>): string {
