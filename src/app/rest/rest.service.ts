@@ -57,7 +57,7 @@ export class RestService {
 
     const ret = date.getFullYear().toString()
       + ('0' + (date.getMonth() + 1).toString()).slice(-2)
-      + ('0' + (date.getDay() + 1).toString()).slice(-2)
+      + ('0' + date.getDate().toString().slice(-2))
       + ('0' + date.getHours().toString()).slice(-2);
     return ret;
   }
